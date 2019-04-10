@@ -21,7 +21,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AuditDetailsActivity extends AppCompatActivity {
+public class AuditDetailsActivity extends AppCompatActivity implements CallBackActivity{
     private static final String TAG = "AuditDetailsActivity";
     List<AuditDetailModelClass> auditDetailModelList = new ArrayList<>();
     RecyclerView detailsRecyclerview;
@@ -169,5 +169,23 @@ public class AuditDetailsActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        Log.d(TAG, "Called back to OnResume");
+        super.onResume();
+
+    }
+
+
+    @Override
+    public void updateList() {
+        Log.d(TAG, "callBackMethod");
+        AuditDetailAdapter auditDetailAdapter = new AuditDetailAdapter(AuditDetailsActivity.this, auditDetailModelList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(AuditDetailsActivity.this);
+        detailsRecyclerview.setLayoutManager(mLayoutManager);
+        detailsRecyclerview.setItemAnimator(new DefaultItemAnimator());
+        detailsRecyclerview.setAdapter(auditDetailAdapter);
     }
 }

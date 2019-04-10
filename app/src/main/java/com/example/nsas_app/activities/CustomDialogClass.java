@@ -118,6 +118,8 @@ public class CustomDialogClass extends Dialog implements android.view.View.OnCli
             default:
                 break;
         }
+        CallBackActivity callBackActivity=(CallBackActivity) activity;
+        callBackActivity.updateList();
         dismiss();
     }
 
