@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">NSAS</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_name">FullName</string>
+    <string name="hint_email">Username/Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="err_msg_name">Enter your full name</string>
+    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_password">Enter the password</string>
+    <string name="hint_organization">Organization</string>
+    <string name="hint_place">Place</string>
+    <string name="hint_re_password">Re-enter password</string>
+    <string name="hint_name_email">Name/Email</string>
+    <string name="register">Register</string>
+    <string name="already_registered_login_here">Already Registered? Login here</string>
+    <string name="complete_the_empty_form_below">Complete the empty form below</string>
+    <string name="hint_department">Department</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_audit_tabs">AuditTabsActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_auditing">AuditingActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="tab_text_1">Current Audit</string>
+    <string name="tab_text_2">Completed audit</string>
+    <string name="tab_text_3">Cancel Audit</string>
+    <string name="title_activity_meeting_tabs">MeetingActivityTabs</string>
+    <string name="cancel_ignore">Cancel/Ignore</string>
+    <string name="completed">Completed</string>
+    <string name="current">Current</string>
+</resources>

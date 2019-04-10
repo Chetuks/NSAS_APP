@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.HomePage"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/activity_dash_board_id"
+            android:icon="@drawable/homepage"
+            android:title="Dashb"
+            android:visible="false" />
+        <item
+            android:id="@+id/customer_profile_id"
+            android:icon="@drawable/homepage"
+            android:title="Profile" />
+        <item
+            android:id="@+id/check_list_id"
+            android:icon="@drawable/homepage"
+            android:title="CheckList" />
+        <item
+            android:id="@+id/to_do_list_id"
+            android:icon="@drawable/homepage"
+            android:title="ToDoList"
+            android:visible="false" />
+        <item
+            android:id="@+id/set_alaram_id"
+            android:icon="@drawable/homepage"
+            android:title="Set Alarm"
+            android:visible="true" />
+        <item
+            android:id="@+id/near_me"
+            android:icon="@drawable/homepage"
+            android:title="Add Me Ads"
+            android:visible="false" />
+        <item
+            android:id="@+id/new_checklist"
+            android:icon="@drawable/homepage"
+            android:title="New CheckList"
+            android:visible="false" />
+        <item
+            android:id="@+id/new_dashboard"
+            android:icon="@drawable/homepage"
+            android:title="New Dashboard"
+            android:visible="true" />
+    </group>
+
+    <item
+        android:id="@+id/configuration"
+        android:title="Configuration"
+        android:visible="true">
+        <menu>
+            <item
+                android:id="@+id/settings_id"
+                android:icon="@drawable/homepage"
+                android:title="Settings"
+                android:visible="true" />
+        </menu>
+    </item>
+
+</menu>

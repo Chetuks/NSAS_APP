@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/backbar"
+        layout="@layout/actionbar_planback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/backbar">
+
+    </com.github.barteksc.pdfviewer.PDFView>
+
+    <TextView
+        android:id="@+id/error_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="No Pdf from server"
+        android:layout_below="@id/backbar"
+        android:visibility="gone"
+        android:gravity="center"/>
+</RelativeLayout>
