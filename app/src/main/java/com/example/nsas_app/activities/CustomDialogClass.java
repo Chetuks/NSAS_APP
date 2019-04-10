@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.example.nsas_app.Logger;
 import com.example.nsas_app.R;
@@ -29,6 +30,7 @@ public class CustomDialogClass extends Dialog implements android.view.View.OnCli
     List<AuditDetailModelClass> auditDetailModelList;
     int auditDetailModelListposition;
     AuditDetailModelClass auditSubModelClass;
+    List<String> mySpinnerList = new ArrayList<String>();
 
     public CustomDialogClass(Activity activity, List<AuditDetailModelClass> auditDetailModelList, int auditDetailModelClasslistposition) {
         super(activity);
@@ -56,7 +58,7 @@ public class CustomDialogClass extends Dialog implements android.view.View.OnCli
         implementDialog.setChecked(auditSubModelClass.isImplimentation());
        String score= auditSubModelClass.getScoring();
        Logger.logD("score",score);
-        List<String> mySpinnerList = new ArrayList<String>();
+
         mySpinnerList.add("0 compilence");
         mySpinnerList.add("5 compilence");
         mySpinnerList.add("10 compilence");
@@ -70,7 +72,21 @@ public class CustomDialogClass extends Dialog implements android.view.View.OnCli
         // attaching data adapter to spinner
         scoringdialog.setAdapter(dataAdapter);
         scoringdialog.setGravity(Gravity.CENTER_HORIZONTAL);
-        //scoringdialog.setAdapter();
+
+        /*
+            updated code form Avinash Raj checking the preselected values and setting the same.
+         */
+        updatePreSelectedSpinnervalue();
+
+    }
+
+    private void updatePreSelectedSpinnervalue() {
+        for (int i=0;i<mySpinnerList.size();i++){
+            if (mySpinnerList.get(i).equalsIgnoreCase(auditSubModelClass.getScoring())){
+                scoringdialog.setSelection(i);
+            }
+        }
+
     }
 
     private void init() {
@@ -90,7 +106,12 @@ public class CustomDialogClass extends Dialog implements android.view.View.OnCli
                 auditSubModelClass.setName(dName.getText().toString());
                 auditSubModelClass.setDocumentation(docDialog.isChecked());
                 auditSubModelClass.setImplimentation(implementDialog.isChecked());
-               // auditDetailModelClass.setScoring(scoringdialog.);
+                /*
+                    Updated the code from avinash updated the dropdown values to model class.
+
+                 */
+                auditSubModelClass.setScoring(mySpinnerList.get(scoringdialog.getSelectedItemPosition()));
+                Toast.makeText(activity,auditSubModelClass.getScoring()+"",Toast.LENGTH_SHORT).show();
                 auditDetailModelList.add(auditSubModelClass);
                 callingSaveUpdateApi();
                 break;
